@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "36e6cb2e-8679-4d30-84fb-749c0430fa82",
+      "email": "correo.correo@mail.com",
+      "password": "akjlsguksdjfg",
+      "region": "21.86, -102.31",
+      "lat": 21.8595328,
+      "lon": -102.3115264,
+      "createdAt": "2026-09-28T23:11:41.350Z",
+      "lastLogin": "2026-09-28T23:11:41.350Z"
+    }
+  ],
+  "sessions": [
+    {
+      "email": "correo.correo@mail.com",
+      "date": "28/9/2026",
+      "time": "05:11 p.m.",
+      "timestamp": 1790637101414
+    }
+  ]
+}

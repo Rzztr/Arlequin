@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verificación de acceso</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Barra de progreso -->
+    <div class="progress-bar">
+      <span class="progress-step active" data-step="1"></span>
+      <span class="progress-step" data-step="2"></span>
+      <span class="progress-step" data-step="3"></span>
+      <span class="progress-step" data-step="4"></span>
+    </div>
+
+    <!-- PANTALLA 1: Confirmación de ubicación -->
+    <section class="screen active" id="screen-location">
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4.5 8-12a8 8 0 1 0-16 0c0 7.5 8 12 8 12z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </div>
+      <h1 class="title">Confirma tu ubicación</h1>
+      <p class="subtitle">
+        Necesitamos validar tu región para verificar el acceso. Activa y permite la ubicación en tu navegador.
+      </p>
+
+      <div class="info-card">
+        <div class="info-row">
+          <span class="label">Región detectada</span>
+          <span class="value" id="region-value">—</span>
+        </div>
+        <div class="info-row">
+          <span class="label">Fecha</span>
+          <span class="value" id="date-value">—</span>
+        </div>
+        <div class="info-row">
+          <span class="label">Hora</span>
+          <span class="value" id="time-value">—</span>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <p class="card-title">Últimos inicios de sesión</p>
+        <ul class="session-list" id="session-list">
+          <li><span>— / — / —</span><span>--:--</span></li>
+          <li><span>— / — / —</span><span>--:--</span></li>
+        </ul>
+      </div>
+
+      <button class="btn primary" id="btn-location">Permitir ubicación</button>
+      <p class="hint" id="location-status"></p>
+    </section>
+
+    <!-- PANTALLA 2: Confirmación de correo -->
+    <section class="screen" id="screen-email">
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="5" width="18" height="14" rx="2"/>
+          <path d="m3 7 9 6 9-6"/>
+        </svg>
+      </div>
+      <h1 class="title">Correo asignado</h1>
+      <p class="subtitle">
+        Ingresa el correo proporcionado por el departamento de Sistemas.
+      </p>
+
+      <form class="form" id="form-email" autocomplete="off">
+        <label class="field">
+          <span class="field-label">Correo institucional</span>
+          <input type="email" id="email" required placeholder="usuario@dominio.com" />
+        </label>
+        <button type="submit" class="btn primary">Continuar</button>
+      </form>
+      <p class="hint error" id="email-status"></p>
+    </section>
+
+    <!-- PANTALLA 3: Contraseña -->
+    <section class="screen" id="screen-password">
+      <form class="form" id="form-password" autocomplete="off">
+        <label class="field">
+          <span class="field-label sr-only">Contraseña</span>
+          <input type="password" id="password" required placeholder="••••••••" />
+        </label>
+        <button type="submit" class="btn primary">Acceder</button>
+      </form>
+      <p class="hint error" id="password-status"></p>
+    </section>
+
+    <!-- PANTALLA 4: Redirección / Final -->
+    <section class="screen" id="screen-done">
+      <div class="icon-wrap success">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 6 9 17l-5-5"/>
+        </svg>
+      </div>
+      <h1 class="title">Verificación completada</h1>
+      <p class="subtitle">
+        Abre la aplicación para continuar. Mantén un mayor cuidado con tus credenciales y no las compartas con nadie.
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

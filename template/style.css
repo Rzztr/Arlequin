@@ -1,0 +1,243 @@
+/* =========================================================
+   VARIABLES GLOBALES — cambia aquí el estilo de TODO
+   ========================================================= */
+:root {
+  /* Colores */
+  --bg-app: #0f1226;
+  --bg-card: #171a35;
+  --bg-elev: #1f2348;
+  --primary: #4f7cff;
+  --primary-hover: #3f6bef;
+  --text: #eef0ff;
+  --text-muted: #a0a6c8;
+  --border: rgba(255, 255, 255, 0.08);
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  /* Tipografía */
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --title-size: 1.5rem;
+  --subtitle-size: 0.95rem;
+
+  /* Layout */
+  --radius: 14px;
+  --radius-sm: 10px;
+  --gap: 1rem;
+  --max-width: 420px;
+
+  /* Transiciones */
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================================================
+   RESET BÁSICO
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: var(--font-family);
+  background: radial-gradient(circle at top, #1b1f45 0%, var(--bg-app) 60%);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
+}
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+.app-shell {
+  width: 100%;
+  max-width: var(--max-width);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.55);
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================================================
+   BARRA DE PROGRESO
+   ========================================================= */
+.progress-bar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1.75rem;
+}
+.progress-step {
+  flex: 1;
+  height: 4px;
+  border-radius: 99px;
+  background: var(--bg-elev);
+  transition: background var(--transition);
+}
+.progress-step.active { background: var(--primary); }
+
+/* =========================================================
+   PANTALLAS (transición entre ellas)
+   ========================================================= */
+.screen {
+  display: none;
+  flex-direction: column;
+  gap: var(--gap);
+  animation: fadeIn var(--transition) forwards;
+}
+.screen.active { display: flex; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   ICONOS
+   ========================================================= */
+.icon-wrap {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--bg-elev);
+  color: var(--primary);
+  margin: 0 auto;
+}
+.icon-wrap svg { width: 28px; height: 28px; }
+.icon-wrap.success { color: var(--success); }
+
+/* =========================================================
+   TEXTOS
+   ========================================================= */
+.title {
+  font-size: var(--title-size);
+  text-align: center;
+  margin: 0;
+  font-weight: 600;
+}
+.subtitle {
+  font-size: var(--subtitle-size);
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   TARJETAS INFORMATIVAS
+   ========================================================= */
+.info-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.35rem 0;
+  font-size: 0.9rem;
+}
+.info-row .label { color: var(--text-muted); }
+.info-row .value { font-weight: 500; }
+
+.card-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
+}
+.session-list {
+  list-style: none;
+  margin: 0; padding: 0;
+  font-size: 0.9rem;
+}
+.session-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  color: var(--text);
+}
+
+/* =========================================================
+   FORMULARIOS
+   ========================================================= */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.field-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  color: var(--text);
+  outline: none;
+  transition: border var(--transition), box-shadow var(--transition);
+}
+input::placeholder { color: var(--text-muted); }
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.2);
+}
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+.btn {
+  padding: 0.85rem 1rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  font-family: inherit;
+}
+.btn.primary {
+  background: var(--primary);
+  color: white;
+}
+.btn.primary:hover { background: var(--primary-hover); }
+.btn.primary:active { transform: scale(0.98); }
+
+/* =========================================================
+   MENSAJES
+   ========================================================= */
+.hint {
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--text-muted);
+  margin: 0;
+  min-height: 1.2em;
+}
+.hint.error { color: var(--danger); }
+.hint.success { color: var(--success); }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 480px) {
+  .app-shell { padding: 1.5rem 1.25rem; }
+  :root {
+    --title-size: 1.3rem;
+    --subtitle-size: 0.9rem;
+  }
+}
