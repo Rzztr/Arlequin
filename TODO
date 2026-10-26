@@ -1,0 +1,11 @@
+TODO:
+
+-Ajustar DNS en C2
+
+-Agregar conexion a BD sqlite3
+
+-Ajustar geolocalizacion del dispositivo
+
+-agregar enmascarador de URL
+
+-Generar Plantillas de correo/mensaje de texto
