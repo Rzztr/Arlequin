@@ -17,4 +17,4 @@ La siguiente fase es integrar el sistema con una fentocelda montada en Raspberry
 
 ## Aviso legal
 
-Esto es una herramienta ofensiva construida para pruebas de seguridad autorizadas. Usarla fuera de un marco legal, contra gente que no autorizó la prueba o con intención de causar daño, es delito y le corresponde responder a la autoridad competente. El responsable del uso eres tú.
+>Esto es una herramienta ofensiva construida para pruebas de seguridad autorizadas. Usarla fuera de un marco legal, contra gente que no autorizó la prueba o con intención de causar daño, es delito y le corresponde responder a la autoridad competente. El responsable del uso eres tú.
